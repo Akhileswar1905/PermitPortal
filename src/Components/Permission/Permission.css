@@ -100,3 +100,69 @@
   cursor: pointer;
   background-color: #9c8a8a;
 }
+
+/* Media Queries */
+@media (max-width: 420px) {
+  .permission-page > .heading {
+    font-size: 2rem;
+  }
+  .perm-form-box {
+    width: 300px;
+    height: 500px;
+  }
+  .perm-form-box > h3 {
+    font-size: 1.5rem;
+  }
+  .perm-form-box > form > textarea {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formInput {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formButton > button {
+    padding: 0px 4px;
+  }
+  .perm-form-box > form > .formButton {
+    padding: 8px;
+  }
+  .perm-form-box > form > .formLabel > label {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > select {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > option {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > input {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > textarea {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files > input {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files > label {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files > .file-name {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files > .file-name > span {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files > .file-name > button {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files > .file-name > button > span {
+    font-size: 14px;
+  }
+  .perm-form-box > form > .formLabel > .files > .file-name > button > svg {
+    font-size: 14px;
+  }
+}
