@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 const fetchData = async () => {
   const id = localStorage.getItem("id");
   try {
-    const response = await axios.get(`http://127.0.0.1:8000/faculty/${id}`);
+    const response = await axios.get(
+      `https://ups-api-f0me.onrender.com/faculty/${id}`
+    );
     console.log("Data:", response.data);
     return response.data;
   } catch (error) {

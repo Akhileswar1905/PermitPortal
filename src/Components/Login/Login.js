@@ -15,7 +15,7 @@ const Login = () => {
     console.log(studData);
     try {
       const data = await axios.post(
-        "http://localhost:8000/student/login",
+        "https://ups-api-f0me.onrender.com/student/login",
         studData
       );
       console.log(data);
@@ -32,7 +32,7 @@ const Login = () => {
     console.log(facData);
     try {
       const data = await axios.post(
-        "http://localhost:8000/faculty/login",
+        "https://ups-api-f0me.onrender.com/faculty/login",
         facData
       );
       console.log(data);
@@ -49,7 +49,10 @@ const Login = () => {
     event.preventDefault();
     console.log(hodData);
     try {
-      const data = await axios.post("http://localhost:8000/hod/login", hodData);
+      const data = await axios.post(
+        "https://ups-api-f0me.onrender.com/hod/login",
+        hodData
+      );
       console.log(data);
       localStorage.setItem("id", data.data.hod._id);
 

@@ -8,7 +8,9 @@ const Permission = () => {
   const fetchUser = async () => {
     const id = localStorage.getItem("id");
     try {
-      const res = await axios.get(`http://localhost:8000/student/${id}`);
+      const res = await axios.get(
+        `https://ups-api-f0me.onrender.com/student/${id}`
+      );
       return res;
     } catch (err) {
       console.log(err);
@@ -47,7 +49,10 @@ const Permission = () => {
     // console.log(data);
 
     try {
-      const res = await axios.post("http://localhost:8000/student", data);
+      const res = await axios.post(
+        "https://ups-api-f0me.onrender.com/student",
+        data
+      );
       console.log(res);
       navigate("/stuDashboard");
     } catch (err) {

@@ -16,7 +16,7 @@ function Records(props) {
         data
       );
       console.log(response);
-      navigate("/facDashboard");
+      navigate("/hodDashboard");
     } catch (error) {
       console.log(error);
     }
@@ -32,23 +32,7 @@ function Records(props) {
         data
       );
       console.log(response);
-      navigate("/facDashboard");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleForward = async (e) => {
-    console.log(data);
-    e.preventDefault();
-    try {
-      const id = data._id;
-      const response = await axios.put(
-        `https://ups-api-f0me.onrender.com/student/fowarded/${id}`,
-        data
-      );
-      console.log(response);
-      navigate("/facDashboard");
+      navigate("/hodDashboard");
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +48,7 @@ function Records(props) {
           <p>Permission Letter: {data.permissionLetter}</p>
           <p>Documents: {data?.documents}</p>
           <p>Status: {data.status}</p>
-          {data.status === "pending" && (
+          {data.status === "forwarded to hod" && (
             <>
               <div className="btns m-2">
                 <button
@@ -78,12 +62,6 @@ function Records(props) {
                   onClick={(e) => handleReject(e)}
                 >
                   Reject
-                </button>
-                <button
-                  className="btn btn-warning m-1"
-                  onClick={(e) => handleForward(e)}
-                >
-                  Forwarded to HoD
                 </button>
               </div>
             </>

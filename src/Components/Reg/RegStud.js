@@ -12,7 +12,7 @@ const RegStud = () => {
     console.log(studData);
     try {
       const data = await axios.post(
-        "http://localhost:8000/student/signup",
+        "https://ups-api-f0me.onrender.com/student/signup",
         studData
       );
       console.log(data);

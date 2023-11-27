@@ -12,7 +12,7 @@ const RegFac = () => {
     console.log(facData);
     try {
       const data = await axios.post(
-        "http://localhost:8000/faculty/signup",
+        "https://ups-api-f0me.onrender.com/faculty/signup",
         facData
       );
       console.log(data);

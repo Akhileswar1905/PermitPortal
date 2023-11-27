@@ -9,6 +9,7 @@ import Permission from "./Components/Permission/Permission";
 import Dashboard from "./Components/Faculty Dashboard/Dashboard.js";
 import HodDashboard from "./Components/HoD Dashboard/Dashboard.js";
 import StuDashboard from "./Components/Student Dashboard/Dashboard.js";
+import RegHod from "./Components/Reg3/RegHod.js";
 function App() {
   return (
     <>
@@ -20,12 +21,12 @@ function App() {
       {/* <StuDashboard /> */}
       {/* <Dashboard /> */}
       {/* <Records /> */}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/regstud" element={<RegStud />} />
         <Route path="/regfac" element={<RegFac />} />
+        <Route path="/reghod" element={<RegHod />} />
         <Route path="/permission" element={<Permission />} />
         <Route path="/stuDashboard" element={<StuDashboard />} />
         <Route path="/facDashboard" element={<Dashboard />} />

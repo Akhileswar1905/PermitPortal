@@ -1,6 +1,6 @@
 import "./Dashboard.css";
 import person from "../../imgs/person.png";
-import Records from "../Records/Records";
+import Records from "../HoD Records/Records";
 import logo from "../../imgs/logo.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 const fetchData = async () => {
   const id = localStorage.getItem("id");
   try {
-    const response = await axios.get(`http://127.0.0.1:8000/hod/${id}`);
+    const response = await axios.get(
+      `https://ups-api-f0me.onrender.com/hod/${id}`
+    );
     console.log("Data:", response.data);
     return response.data;
   } catch (error) {
