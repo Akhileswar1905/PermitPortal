@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Records from "./Components/Records/Records";
+import RegFac from "./Components/Reg2/RegFac";
+import Home from "./Components/Home/Home";
+import Login from "./Components/Login/Login";
+import RegStud from "./Components/Reg/RegStud";
+import Permission from "./Components/Permission/Permission";
+import Dashboard from "./Components/Faculty Dashboard/Dashboard.js";
+import HodDashboard from "./Components/HoD Dashboard/Dashboard.js";
+import StuDashboard from "./Components/Student Dashboard/Dashboard.js";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Login /> */}
+      {/* <Home /> */}
+      {/* <RegStud></RegStud> */}
+      {/* <RegFac></RegFac> */}
+      {/* <Permission /> */}
+      {/* <StuDashboard /> */}
+      {/* <Dashboard /> */}
+      {/* <Records /> */}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/regstud" element={<RegStud />} />
+        <Route path="/regfac" element={<RegFac />} />
+        <Route path="/permission" element={<Permission />} />
+        <Route path="/stuDashboard" element={<StuDashboard />} />
+        <Route path="/facDashboard" element={<Dashboard />} />
+        <Route path="/hodDashboard" element={<HodDashboard />} />
+        <Route path="/records" element={<Records />} />
+      </Routes>
+    </>
   );
 }
 

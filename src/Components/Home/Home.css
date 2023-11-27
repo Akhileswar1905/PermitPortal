@@ -1,0 +1,130 @@
+.home-container,
+.page3 {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.home-page1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* justify-content: space-around; */
+  font-size: 1.5rem;
+}
+
+header > img {
+  width: 150px;
+  margin-left: 1.5rem;
+}
+
+.home-section1 {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  /* position: absolute; */
+}
+
+.home-section1 > .home-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 3rem 0px;
+}
+
+.home-section1 > .getStarted > button {
+  color: white;
+  background-color: #ff7647;
+  font-size: 20px;
+  padding: 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.getStarted > button:hover {
+  cursor: pointer;
+  background-color: #ff7647;
+}
+
+.home-section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 2rem;
+  background-color: #ff7647;
+  text-align: left;
+  color: white;
+  padding: 50px;
+}
+
+.page2 > p {
+  font-size: 1.5rem;
+}
+
+.page2 > .heading {
+  font-size: 4rem;
+  font-weight: 700;
+  padding: 15px;
+  border-bottom: 4px solid white;
+}
+
+.section4 > .heading {
+  font-size: 4rem;
+  font-weight: 700;
+  padding: 15px;
+}
+
+.section4 > p {
+  padding: 15px;
+  font-size: 1.5rem;
+}
+
+.getStarted2 > button {
+  background-color: white;
+  color: #ff7647;
+  border: none;
+  outline: none;
+  margin: 1rem;
+  padding: 30px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.getStarted2 {
+  align-self: flex-end;
+}
+
+footer {
+  background-color: #050505;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer > .block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 1.25rem;
+}
