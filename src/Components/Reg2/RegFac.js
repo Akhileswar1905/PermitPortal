@@ -31,6 +31,7 @@ const RegFac = () => {
   return (
     <div className="regs-body">
       <div className="regs-box-2">
+        <h1 className="header">SignUp</h1>
         <div className="regs-form-box">
           <form>
             <div className="formLabel">

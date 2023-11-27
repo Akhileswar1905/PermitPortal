@@ -3,6 +3,8 @@ import logo from "../../imgs/logo.png";
 import image1 from "../../imgs/image1.png";
 import image2 from "../../imgs/image2.png";
 import { Link } from "react-router-dom";
+import { FaSquareInstagram, FaLinkedin } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
 const Home = () => {
   return (
     <>
@@ -24,7 +26,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="page2">
+      <div className="home-page2">
         <h1 className="heading">Welcome Aboard</h1>
         <p>
           Introducing the Permission System: Seamlessly manage and streamline
@@ -34,13 +36,11 @@ const Home = () => {
           organized environment for students, faculty, and staff.
         </p>
         <Link to={"/login"} className="getStarted2">
-          <button>
-            <span>🡢</span>
-          </button>
+          <button>{/* <span></span> */}</button>
         </Link>
       </div>
 
-      <div className="page3">
+      <div className="home-page3">
         <div className="section3">
           <img src={image2} alt="" />
         </div>
@@ -58,15 +58,32 @@ const Home = () => {
       <footer>
         <div className="block">
           <h4>Account</h4>
-          <p>Login</p>
-          <p>Register</p>
-          <p>Reset Password</p>
+          <Link to={"/login"}>Login</Link>
+          <Link to={"/regstu"}>Student Register</Link>
+          <Link to={"/regfac"}>Faculty Register</Link>
+          <Link to={"/reghod"}>HoD Register</Link>
         </div>
-        <div className="block">
+        {/* <div className="block">
           <h4>Support</h4>
           <p>FAQs</p>
           <p>Contact</p>
           <p>Feedback</p>
+        </div> */}
+        <div className="flex">
+          <div className="socialMedia-Me">
+            <h4>Developer</h4>
+            <div className="socialMedia">
+              <a href="https://www.instagram.com/urs_akhileswar">
+                <FaSquareInstagram />
+              </a>
+              <a href="https://www.linkedin.com/in/sathivada-akhileswar-243b66237/">
+                <IoLogoGithub />
+              </a>
+              <a href="https://github.com/Akhileswar1905">
+                <FaLinkedin />
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </>

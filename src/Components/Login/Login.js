@@ -77,10 +77,10 @@ const Login = () => {
   };
   return (
     <>
-      <header className="heading">
-        <h1>Login</h1>
-      </header>
       <div className="loginContainer">
+        <header className="heading">
+          <h1>Login</h1>
+        </header>
         <div className="box">
           <div className="student-form">
             <form>

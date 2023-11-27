@@ -54,53 +54,95 @@ const Dashboard = () => {
           </button>
         </div>
       </header>
-      <div className="dashboard-container">
-        <div className="page1">
-          <h1 className="heading">Your Permission Requests</h1>
-          {data?.permissionRecords.map((element) => (
-            <Records
-              key={element.id}
-              data={{ ...element, name: data?.name, rollNo: data?.rollNo }}
-            />
-          ))}
-        </div>
-        <div className="page2">
-          <h1 className="heading">DashBoard</h1>
-          <div className="person">
-            <img src={person} alt="" />
-            <div className="details">
-              <form>
-                <div className="formLabel">
-                  <label htmlFor="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="formInput"
-                    value={data?.name || ""}
-                    readOnly
-                  />
-                </div>
-                <div className="formLabel">
-                  <label htmlFor="id">User ID</label>
-                  <input
-                    type="text"
-                    value={data?.rollNo || ""}
-                    id="id"
-                    className="formInput"
-                    readOnly
-                  />
-                </div>
-                <div className="formLabel">
-                  <label htmlFor="dept">Class and Section</label>
-                  <input
-                    type="text"
-                    value={data?.classAndSection || ""}
-                    id="dept"
-                    className="formInput"
-                    readOnly
-                  />
-                </div>
-              </form>
+      <div className="main">
+        <div className="dashboard-container">
+          <div className="v-1 page2 ">
+            <h1 className="heading">DashBoard</h1>
+            <div className="person">
+              <img src={person} alt="" />
+              <div className="details">
+                <form>
+                  <div className="formLabel">
+                    <label htmlFor="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="formInput"
+                      value={data?.name || ""}
+                      readOnly
+                    />
+                  </div>
+                  <div className="formLabel">
+                    <label htmlFor="id">User ID</label>
+                    <input
+                      type="text"
+                      value={data?.rollNo || ""}
+                      id="id"
+                      className="formInput"
+                      readOnly
+                    />
+                  </div>
+                  <div className="formLabel">
+                    <label htmlFor="dept">Class and Section</label>
+                    <input
+                      type="text"
+                      value={data?.classAndSection || ""}
+                      id="dept"
+                      className="formInput"
+                      readOnly
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="page1">
+            <h1 className="heading">Your Permission Requests</h1>
+            {data?.permissionRecords.map((element) => (
+              <Records
+                key={element.id}
+                data={{ ...element, name: data?.name, rollNo: data?.rollNo }}
+              />
+            ))}
+          </div>
+          <div className="page2 v-2">
+            <h1 className="heading">DashBoard</h1>
+            <div className="person">
+              <img src={person} alt="" />
+              <div className="details">
+                <form>
+                  <div className="formLabel">
+                    <label htmlFor="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="formInput"
+                      value={data?.name || ""}
+                      readOnly
+                    />
+                  </div>
+                  <div className="formLabel">
+                    <label htmlFor="id">User ID</label>
+                    <input
+                      type="text"
+                      value={data?.rollNo || ""}
+                      id="id"
+                      className="formInput"
+                      readOnly
+                    />
+                  </div>
+                  <div className="formLabel">
+                    <label htmlFor="dept">Class and Section</label>
+                    <input
+                      type="text"
+                      value={data?.classAndSection || ""}
+                      id="dept"
+                      className="formInput"
+                      readOnly
+                    />
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

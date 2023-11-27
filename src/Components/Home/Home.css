@@ -1,5 +1,5 @@
 .home-container,
-.page3 {
+.home-page3 {
   display: flex;
   /* flex-direction: column; */
   align-items: center;
@@ -61,7 +61,7 @@ header > img {
   justify-content: center;
 }
 
-.page2 {
+.home-page2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -73,11 +73,11 @@ header > img {
   padding: 50px;
 }
 
-.page2 > p {
+.home-page2 > p {
   font-size: 1.5rem;
 }
 
-.page2 > .heading {
+.home-page2 > .heading {
   font-size: 4rem;
   font-weight: 700;
   padding: 15px;
@@ -96,7 +96,8 @@ header > img {
 }
 
 .getStarted2 > button {
-  background-color: white;
+  content: "\f054";
+  /* background-color: white; */
   color: #ff7647;
   border: none;
   outline: none;
@@ -124,7 +125,82 @@ footer > .block {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 2rem;
   font-size: 1.25rem;
+  gap: 12px;
+}
+
+footer > .block > a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.socialMedia-Me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1rem;
+}
+
+.socialMedia-Me > .socialMedia {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.socialMedia > a {
+  color: #fefefe;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+/* Media Queries */
+
+@media (max-width: 420px) {
+  .home-section2,
+  .section3 {
+    display: none;
+  }
+
+  header > img {
+    width: 100px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin: 0;
+  }
+  .home-section1 > .home-heading {
+    font-size: 3rem;
+  }
+  .home-page2 {
+    padding: 20px;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  .home-page2 > .heading,
+  .section4 > .heading {
+    font-size: 2.5rem;
+  }
+
+  .home-page2 > p,
+  .section4 > p {
+    font-size: 1.25rem;
+  }
+
+  footer > .block {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+
+  .getStarted2 > button {
+    content: "\f054";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
 }

@@ -1,4 +1,4 @@
-.dashboard > header > img {
+.dashboard > header > .logo > img {
   width: 100px;
 }
 .dashboard > .heading {
@@ -94,4 +94,17 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+/* Media Queries */
+@media (max-width: 420px) {
+  .dashboard > .facHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  form {
+    padding: 20px;
+  }
 }

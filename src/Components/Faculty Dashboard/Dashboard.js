@@ -38,8 +38,11 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <header>
-        <img src={logo} alt="" />
+      <header className="facHeader">
+        <div className="logo">
+          {" "}
+          <img src={logo} alt="" />
+        </div>
         <div className="links">
           <button
             onClick={() => {

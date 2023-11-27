@@ -5,3 +5,10 @@
   padding: 8px;
   border-radius: 5px;
 }
+
+/* Media Queries */
+@media (max-width: 420px) {
+  .accordion-header > button {
+    font-size: 0.8rem;
+  }
+}

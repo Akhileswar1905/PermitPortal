@@ -127,3 +127,63 @@
   outline: none;
   cursor: pointer;
 }
+.v-1 {
+  display: none !important;
+}
+/* Media Queries */
+@media screen and (max-width: 420px) {
+  .dashboard {
+    display: block;
+  }
+
+  .dashboard > header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 0.75rem;
+  }
+
+  .page1,
+  .page2 {
+    margin: 0.5rem 0;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .page1 > .heading {
+    font-size: 1.3rem;
+  }
+
+  .dashboard > heading > img {
+    width: 50px;
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+  }
+
+  .dashboard-container {
+    display: block;
+    width: 100%;
+  }
+
+  .dashboard-container > .page2 {
+    width: 100%;
+  }
+
+  .v-1 {
+    display: block !important;
+  }
+  .details > form > .formLabel > input {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+  .v-2 {
+    display: none !important;
+  }
+}

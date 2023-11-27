@@ -8,7 +8,7 @@ function Records(props) {
     <Accordion>
       <Accordion.Item className="item" eventKey={data.id}>
         <Accordion.Header>
-          {data.subject} - <b>{data.Timestamp}</b>{" "}
+          {data.subject} - <b>{data.Timestamp.split(" ")[0]}</b>{" "}
         </Accordion.Header>
         <Accordion.Body>
           <p>
