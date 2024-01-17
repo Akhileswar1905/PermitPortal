@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/Modal";
 function Model(props) {
     const handleGrant = async(record) => {
       console.log(record);
-      const res = await axios.post("http://localhost:8000/user/grant",record)
+      const res = await axios.post("https://ups-api-f0me.onrender.com/user/grant",record)
       if(res.status === 200){
         console.log(res)
         props.onHide()
@@ -14,7 +14,7 @@ function Model(props) {
     };
     const handleReject = async(record) => {
       console.log(record);
-      const res = await axios.post("http://localhost:8000/user/reject",record)
+      const res = await axios.post("https://ups-api-f0me.onrender.com/user/reject",record)
       if(res.status === 200){
         console.log(res)
         props.onHide()

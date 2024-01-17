@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import image3 from "../../imgs/image3.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import './Reg.css'
 const RegFac = () => {
   const location = useLocation();
   const { user } = location.state;
   const [form, setForm] = useState(user);
-  console.log(form);
+  
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,8 +15,8 @@ const RegFac = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = await axios.post("http://localhost:8000/user/signup", form);
-    console.log(data);
+    const data = await axios.post("https://ups-api-f0me.onrender.com/user/signup", form);
+    
     localStorage.setItem("id", data.data.user._id);
 
     navigate("/dashboard");

@@ -7,7 +7,7 @@ const Page1 = () => {
  const [user,setUser] = useState(null);
   useEffect(() => {
     const fetchUser = async ()=>{
-        const res = await axios.get(`http://localhost:8000/user/${id}`);
+        const res = await axios.get(`https://ups-api-f0me.onrender.com/user/${id}`);
         console.log(res)
         setUser(res.data.user);
     }

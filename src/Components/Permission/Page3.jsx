@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import './Permission.css'
 const Page3 = () => {
   const location = useLocation();
   const data = location.state.user;
@@ -10,7 +10,7 @@ const Page3 = () => {
     const [rec, setRec] = useState(null);
   useEffect(() => {
     const getFac = async () => {
-      const res = await axios.get("http://localhost:8000/user/staff");
+      const res = await axios.get("https://ups-api-f0me.onrender.com/user/staff");
       setUsers(res.data.users);
     };
     getFac();
@@ -35,7 +35,7 @@ const Page3 = () => {
             sender: localStorage.getItem("id")
           }
         };      
-        const res = await axios.post("http://localhost:8000/user/req",updatedForm);
+        const res = await axios.post("https://ups-api-f0me.onrender.com/user/req",updatedForm);
         if(res){
             navigate("/dashboard")
         }

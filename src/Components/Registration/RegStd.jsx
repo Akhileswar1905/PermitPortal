@@ -15,8 +15,7 @@ const RegStd = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://localhost:8000/user/signup", form);
-    console.log(res);
+    const res = await axios.post("https://ups-api-f0me.onrender.com/user/signup", form);
     localStorage.setItem("id", res.data.user._id);
     navigate("/dashboard");
   };

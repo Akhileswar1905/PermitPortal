@@ -10,7 +10,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const id = localStorage.getItem("id");
-      const data = await axios.get(`http://localhost:8000/user/${id}`);
+      const data = await axios.get(`https://ups-api-f0me.onrender.com/user/${id}`);
       setUser(data.data.user);
     };
     fetchUser();

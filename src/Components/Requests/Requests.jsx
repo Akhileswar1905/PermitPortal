@@ -7,7 +7,7 @@ const Requests = () => {
   const id = localStorage.getItem("id");
   useEffect(() => {
     const fetchUser = async () => {
-      const response = await axios.get(`http://localhost:8000/user/${id}`);
+      const response = await axios.get(`https://ups-api-f0me.onrender.com/user/${id}`);
       setUser(response.data.user);
     };
     fetchUser();

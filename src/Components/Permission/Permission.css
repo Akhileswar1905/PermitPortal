@@ -45,3 +45,20 @@
   color: white;
   padding: 8px 12px;
 }
+
+/* media queries */
+
+@media (max-width: 500px) {
+  .perm-container {
+    height: 90vh;
+  }
+  .perm-container > .sub-container {
+    box-shadow: none;
+    width: 350px;
+  }
+
+  .perm-container > .sub-container > form {
+    padding: 0 20px;
+    width: 350px;
+  }
+}

@@ -159,3 +159,23 @@
     height: 100%;
   }
 }
+
+@media (max-width: 500px) {
+  .reg-2,
+  .reg-3 {
+    box-shadow: none;
+  }
+  .reg-2 > form > .reg-label {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .reg-2 > form {
+    gap: 33px;
+  }
+
+  .reg-label > input {
+    width: 100%;
+    /* height: 20px; */
+  }
+}
