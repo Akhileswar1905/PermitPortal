@@ -1,0 +1,161 @@
+.reg-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reg-sec2 > img {
+  width: 564px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.reg-formBox {
+  width: 703px;
+  height: 800px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #fdfdfd;
+  box-shadow: 3px 7px 4px 3px rgba(0, 0, 0, 0.25);
+}
+
+.reg-formBox > form {
+  width: 526px;
+  height: 718px;
+  flex-shrink: 0;
+  padding: 46px 130px 36px 47px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label > input {
+  border-radius: 20px;
+  background: #d9d9d9;
+  border: none;
+  outline: none;
+  padding: 4px;
+}
+
+.radioBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.radioBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reg-2 {
+  width: 703px;
+  height: 584px;
+  flex-shrink: 0;
+}
+
+.reg-3 {
+  width: 703px;
+  height: 343px;
+  flex-shrink: 0;
+}
+
+/* Media query */
+@media (max-width: 850px) {
+  .reg-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .reg-sec2 {
+    display: none;
+  }
+
+  .reg-container {
+    height: 90vh;
+    width: 100%;
+  }
+
+  .reg-sec1 {
+    width: 90%;
+  }
+
+  .reg-formBox {
+    width: 100%;
+    height: 100%;
+  }
+
+  .reg-sec2 > img {
+    display: none;
+  }
+
+  .reg-formBox {
+    width: 90%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .reg-formBox > form {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .reg-formBox > form > h1 {
+    font-size: 1.5rem;
+  }
+
+  .reg-label {
+    font-size: 13px;
+  }
+
+  form > p {
+    font-size: 13px;
+  }
+
+  .reg-formBox > form > .form-label > input {
+    padding: 10px;
+  }
+
+  .reg-formBox > form > .radioBtns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reg-formBox > form > .radioBtns > .radioBtn {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .reg-formBox > form > .radioBtns > .radioBtn > input {
+    width: 20px;
+    height: 20px;
+  }
+
+  .reg-formBox > form > .radioBtns > .radioBtn > label {
+    font-size: 0.5rem;
+  }
+
+  .reg-formBox > form > .formSubmit > input {
+    width: 100%;
+  }
+
+  .reg-2 {
+    width: 90%;
+    height: 100%;
+  }
+
+  .reg-3 {
+    width: 90%;
+    height: 100%;
+  }
+}

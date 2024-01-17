@@ -1,103 +1,136 @@
-.heading {
-  margin: 1rem;
-  font-size: 3rem;
-  border-bottom: 3px solid #050505;
-}
-
-.loginContainer {
+.login2-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100vh;
-  padding: 30px;
 }
 
-.box {
-  display: flex;
-  gap: 30px;
+.login2-sec1 {
+  width: 564px;
+  height: 503px;
+  flex-shrink: 0;
+}
+
+.login2-sec1 > img {
+  width: 100%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.login2-formbox {
+  display: inline-flex;
+  padding: 82px 130.313px 103px 52px;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.student-form,
-.faculty-form {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.student-form > form,
-.faculty-form > form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: #fff;
-  /* width: 100%;  */
-  gap: 23px;
   border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  background: #fdfdfd;
+  box-shadow: 3px 7px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.student-form > form:hover,
-.faculty-form > form:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.formLabel {
+.login2-formbox > form {
+  width: 520.687px;
+  gap: 32px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  height: 387px;
 }
 
-.bar {
-  width: 100%;
-  height: 12px;
-  background-color: #ff7647;
+.login2-formbox > form > h1 {
+  color: #000;
+  /* font-family: Inter; */
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 21px;
 }
 
-.formInput {
-  background-color: transparent;
+.formbox-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.formbox-label > input {
+  background: transparent;
   border: none;
-  width: 100%;
+  /* border-bottom: 1px solid black; */
   outline: none;
-  border-bottom: 1px solid #050505;
-  padding: 8px;
-  font-size: 16px;
-}
-
-.formButton {
-  background-color: #ff7647;
-  border: none;
-  outline: none;
-  color: #fff;
-  padding: 18px;
+  padding: 5px;
+  background-color: #ddd;
   border-radius: 5px;
-  cursor: pointer;
 }
 
-/* Media Queries */
-@media (max-width: 420px) {
-  .box {
-    flex-direction: column;
-  }
+.formSubmit > input {
+  border-radius: 20px;
+  background: #639c63;
+  border-radius: 20px;
+  background: #639c63;
+  color: white;
+  border: none;
+  outline: none;
+  width: 25%;
+  padding: 8px;
+  margin-top: 20px;
+}
 
-  .student-form,
-  .faculty-form {
+/* Media queries */
+@media (max-width: 830px) {
+  .login2-sec1 {
+    display: none;
+  }
+  .login2-sec2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login2-sec2 > .login2-formbox {
     width: 95%;
   }
+}
 
-  .loginContainer {
-    display: block;
-    padding: 10px;
+/* Media queries */
+@media (max-width: 450px) {
+  .login2-container {
+    height: 80vh;
   }
 
-  .student-form > form > .formLabel,
-  .faculty-form > form > .formLabel {
-    font-size: 1rem;
+  .login2-sec2 {
+    width: 90%;
+    height: 100%;
+  }
+
+  .login2-sec2 > .login2-formbox {
+    width: 100%;
+    display: flex;
+    /* width: 260px; */
+    height: 400px;
+    padding: 24px 10.5px 24.5px 11px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .login2-formbox > form {
+    width: 217px;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+
+  .login2-formbox > form > h1 {
+    font-size: 26px;
+  }
+
+  .formbox-label {
+    width: 175.482px;
+    height: 40.509px;
+    flex-shrink: 0;
+  }
+
+  .formSubmit > input {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .formbox-label > input {
+    width: 100%;
   }
 }
