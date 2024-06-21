@@ -1,64 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { storage } from "./firebase";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { v4 } from "uuid";
+import { uploadFile } from "../../lib/utils";
 
 const Page2 = () => {
   const location = useLocation();
   const data = location.state.user;
-  // console.log(data)
   const navigate = useNavigate();
   const [form, setForm] = useState(data);
   const [req, setReq] = useState({});
   const [file, setFile] = useState(null);
+  const [uploaded, setUploaded] = useState(true);
 
-
-  useEffect(()=>{
-    const uploadFile = ()=>{
-    
-        const storageRef = ref(storage, `${file.name}-${v4()}`);
-    uploadBytes(storageRef,file).then((snapshot) => {
-          console.log("Uploaded a blob or file!");
-        console.log(snapshot.ref)
-        getDownloadURL(snapshot.ref).then((url)=>setReq({...req,docs:url}))        });
-      }
-        if(file){
-            uploadFile();
-        }    
-  },[file,req])
-  
-  const handleChange = (e) => {
-    if (e.target.type === "file") {
-      setFile(e.target.files[0]);
+  const handleChange = async (e) => {
+    if (e.target.name === "docs") {
+      uploadFile(e.target.files[0])
+        .then((url) => {
+          console.log(url);
+          setReq({
+            ...req,
+            docs: url,
+          });
+          setUploaded(false);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
       return;
     }
     setReq({ ...req, [e.target.name]: e.target.value });
+    console.log(req);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setForm((prevForm) => ({
-      ...prevForm,
-      request: req,
-    }));
     const updatedForm = {
       ...form,
       request: req,
     };
-
     console.log(updatedForm);
     navigate("/perm3", { state: { user: updatedForm } });
   };
+
   return (
     <div className="perm-container">
       <div className="sub-container">
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={handleSubmit}>
           <h3>Permission Details</h3>
           <div className="form-label">
             <label htmlFor="date">Date</label>
             <input
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
               type="date"
               name="date"
               id="date"
@@ -68,27 +59,22 @@ const Page2 = () => {
           <div className="form-label">
             <label htmlFor="reason">Subject</label>
             <input
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
               type="text"
               name="subject"
               required
             />
           </div>
           <div className="form-label">
-            <label htmlFor="status">Body of the letter</label>
-            <textarea
-              onChange={(e) => handleChange(e)}
-              type="text"
-              name="body"
-              required
-            />
+            <label htmlFor="body">Body of the letter</label>
+            <textarea onChange={handleChange} name="body" required />
           </div>
           <div className="form-label">
-            <label htmlFor="status">Documents (If any)</label>
-            <input onChange={(e) => handleChange(e)} type="file" name="body" />
+            <label htmlFor="docs">Documents (If any)</label>
+            <input onChange={handleChange} type="file" name="docs" />
           </div>
           <div className="form-label">
-            <input type="submit" value="Next" />
+            <input type="submit" value="Next" disabled={uploaded} />
           </div>
         </form>
       </div>

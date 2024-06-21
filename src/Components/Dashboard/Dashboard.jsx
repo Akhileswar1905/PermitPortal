@@ -10,7 +10,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const id = localStorage.getItem("id");
-      const data = await axios.get(`https://ups-api-f0me.onrender.com/user/${id}`);
+      const data = await axios.get(
+        `https://ups-api-f0me.onrender.com/user/${id}`
+      );
       setUser(data.data.user);
     };
     fetchUser();
@@ -47,25 +49,29 @@ const Dashboard = () => {
         </div>
       </div>
 
-<div className="hero">
-<h1>Your Permission Requests</h1>
+      <div className="hero">
+        <h1>Your Permission Requests</h1>
 
-      <div className="main-page">
-        {user?.permissionRecords.map((record) => (
-          <div key={record.id} className="model" onClick={() => handleModelClick(record)}>
-            {record.subject} - {record.date}
-          </div>
-        ))}
+        <div className="main-page">
+          {user?.permissionRecords.map((record) => (
+            <div
+              key={record.id}
+              className="model"
+              onClick={() => handleModelClick(record)}
+            >
+              {record.subject} - {record.date}
+            </div>
+          ))}
 
-        {selectedRecord && (
-          <MyVerticallyCenteredModal
-          show={true}
-          onHide={handleCloseModal}
-          record={selectedRecord}
-          />
+          {selectedRecord && (
+            <MyVerticallyCenteredModal
+              show={true}
+              onHide={handleCloseModal}
+              record={selectedRecord}
+            />
           )}
+        </div>
       </div>
-          </div>
     </div>
   );
 };

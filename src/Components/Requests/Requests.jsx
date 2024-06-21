@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import './Requests.css'
+import "./Requests.css";
 import Model from "./Modal";
 import axios from "axios";
 const Requests = () => {
@@ -7,7 +7,9 @@ const Requests = () => {
   const id = localStorage.getItem("id");
   useEffect(() => {
     const fetchUser = async () => {
-      const response = await axios.get(`https://ups-api-f0me.onrender.com/user/${id}`);
+      const response = await axios.get(
+        `https://ups-api-f0me.onrender.com/user/${id}`
+      );
       setUser(response.data.user);
     };
     fetchUser();
@@ -15,12 +17,16 @@ const Requests = () => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div className="request" >
+    <div className="request">
       <h1>Requests</h1>
       {user &&
         user.permissionRequests.map((record) => (
           <>
-            <div key={record.id} className="model" onClick={() => setModalShow(true)}>
+            <div
+              key={record._id}
+              className="model"
+              onClick={() => setModalShow(true)}
+            >
               {record.subject} - {record.date}
             </div>
             <Model
