@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function Model(props) {
-  console.log(props.record);
   const handleGrant = async (record) => {
     const res = await axios.post(
       "https://ups-api-f0me.onrender.com/user/grant",
@@ -15,6 +14,7 @@ function Model(props) {
       props.onHide();
     }
   };
+
   const handleReject = async (record) => {
     console.log(record);
     const res = await axios.post(
@@ -26,6 +26,8 @@ function Model(props) {
       props.onHide();
     }
   };
+
+  if (!props.record) return null;
 
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>

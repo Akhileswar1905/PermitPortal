@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 import "./Requests.css";
 import Model from "./Modal";
 import axios from "axios";
+
 const Requests = () => {
   const [user, setUser] = useState(null);
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedRecord, setSelectedRecord] = useState(null);
   const id = localStorage.getItem("id");
+
   useEffect(() => {
     const fetchUser = async () => {
       const response = await axios.get(
@@ -13,29 +17,31 @@ const Requests = () => {
       setUser(response.data.user);
     };
     fetchUser();
-  });
-  const [modalShow, setModalShow] = useState(false);
+  }, [id]);
+
+  const handleRecordClick = (record) => {
+    setSelectedRecord(record);
+    setModalShow(true);
+  };
 
   return (
     <div className="request">
       <h1>Requests</h1>
       {user &&
         user.permissionRequests.map((record) => (
-          <>
-            <div
-              key={record._id}
-              className="model"
-              onClick={() => setModalShow(true)}
-            >
-              {record.subject} - {record.date}
-            </div>
-            <Model
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-              record={record}
-            />
-          </>
+          <div
+            key={record._id}
+            className="model"
+            onClick={() => handleRecordClick(record)}
+          >
+            {record.subject} - {record.date}
+          </div>
         ))}
+      <Model
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        record={selectedRecord}
+      />
     </div>
   );
 };
