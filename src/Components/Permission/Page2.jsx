@@ -9,10 +9,11 @@ const Page2 = () => {
   const [form, setForm] = useState(data);
   const [req, setReq] = useState({});
   const [file, setFile] = useState(null);
-  const [uploaded, setUploaded] = useState(true);
+  const [uploaded, setUploaded] = useState(false);
 
   const handleChange = async (e) => {
     if (e.target.name === "docs") {
+      setUploaded(true);
       uploadFile(e.target.files[0])
         .then((url) => {
           console.log(url);

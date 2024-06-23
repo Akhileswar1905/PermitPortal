@@ -17,7 +17,7 @@ const Login2 = () => {
     e.preventDefault();
     try {
       const data = await axios.post(
-        "https://ups-api-f0me.onrender.com/user/signin",
+        "https://permission-system-api.onrender.com/user/signin",
         form
       );
       localStorage.setItem("id", data.data.user._id);

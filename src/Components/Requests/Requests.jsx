@@ -12,7 +12,7 @@ const Requests = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const response = await axios.get(
-        `https://ups-api-f0me.onrender.com/user/${id}`
+        `https://permission-system-api.onrender.com/user/${id}`
       );
       setUser(response.data.user);
     };

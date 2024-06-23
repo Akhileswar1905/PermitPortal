@@ -11,7 +11,7 @@ const Page3 = () => {
   useEffect(() => {
     const getFac = async () => {
       const res = await axios.get(
-        "https://ups-api-f0me.onrender.com/user/staff"
+        "https://permission-system-api.onrender.com/user/staff"
       );
       setUsers(res.data.users);
     };
@@ -39,7 +39,7 @@ const Page3 = () => {
     };
     console.log(updatedForm);
     const res = await axios.post(
-      "https://ups-api-f0me.onrender.com/user/req",
+      "https://permission-system-api.onrender.com/user/req",
       updatedForm
     );
     if (res) {

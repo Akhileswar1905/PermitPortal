@@ -11,7 +11,7 @@ const Dashboard = () => {
     const fetchUser = async () => {
       const id = localStorage.getItem("id");
       const data = await axios.get(
-        `https://ups-api-f0me.onrender.com/user/${id}`
+        `https://permission-system-api.onrender.com/user/${id}`
       );
       setUser(data.data.user);
     };
