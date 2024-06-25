@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/Modal";
 function Model(props) {
   const handleGrant = async (record) => {
     const res = await axios.post(
-      "https://ups-api-f0me.onrender.com/user/grant",
+      "https://permission-system-api.onrender.com/user/grant",
       record
     );
     if (res.status === 200) {
@@ -18,7 +18,7 @@ function Model(props) {
   const handleReject = async (record) => {
     console.log(record);
     const res = await axios.post(
-      "https://ups-api-f0me.onrender.com/user/reject",
+      "https://permission-system-api.onrender.com/user/reject",
       record
     );
     if (res.status === 200) {
