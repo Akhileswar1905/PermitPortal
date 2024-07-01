@@ -7,13 +7,13 @@ const RegStd = () => {
   const location = useLocation();
   const { user } = location.state;
   const [form, setForm] = useState(user);
-  console.log(form);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
+    console.log(form);
     e.preventDefault();
     const res = await axios.post(
       "https://permission-system-api.onrender.com/user/signup",

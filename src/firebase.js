@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import "firebase/auth";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
@@ -12,8 +13,8 @@ const firebaseConfig = {
   measurementId: "G-Z5P78F370Y",
 };
 
-// Initialize Firebase if it hasn't been initialized already
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
+const messaging = getMessaging(app);
 
-export { app, storage };
+export { app, storage, messaging, getToken, onMessage };

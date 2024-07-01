@@ -4,9 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Reg = () => {
-  const [form, setForm] = useState({});
+  const fcmToken = localStorage.getItem("fcmtoken");
+  const [form, setForm] = useState({
+    fcmToken: fcmToken,
+  });
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -14,11 +16,14 @@ const Reg = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const bool = form.password === form.confirmPassword;
+    console.log(form);
     if (bool) {
-      if (form.role === "student") navigate("/regstud",{state:{user:form}});
-      else if (form.role === "staff") navigate("/regfac",{state:{user:form}});
-    }else{
-      alert("Please check you password")
+      if (form.role === "student")
+        navigate("/regstud", { state: { user: form } });
+      else if (form.role === "staff")
+        navigate("/regfac", { state: { user: form } });
+    } else {
+      alert("Please check you password");
     }
   };
   return (
@@ -77,7 +82,7 @@ const Reg = () => {
                 required
               />
             </div>
-           
+
             <div className="formbox-label reg-label">
               <label htmlFor="role">Role</label>
               <div className="radioBtns">
